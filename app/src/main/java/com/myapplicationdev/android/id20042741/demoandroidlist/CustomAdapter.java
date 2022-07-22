@@ -2,6 +2,7 @@ package com.myapplicationdev.android.id20042741.demoandroidlist;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,9 @@ public class CustomAdapter extends ArrayAdapter {
         // since this method will be called a # of times, the position of each Row will be different and starting from 0
         // it will be safe to assume that we can populate the data based on the new position of the listview
         AndroidVersion currentVersion = versionList.get(position);
+
+        Log.i("debug", currentVersion.getName());
+        Log.i("debug", currentVersion.getVersion());
 
         // Set values to the TextView to display the corresponding information
         tvName.setText(currentVersion.getName());
