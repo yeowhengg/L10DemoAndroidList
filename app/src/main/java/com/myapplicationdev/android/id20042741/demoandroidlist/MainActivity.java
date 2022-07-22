@@ -12,9 +12,9 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     ListView lv;
-    ArrayList<String> lvAL;
+    ArrayList<AndroidVersion> lvAL;
     String[] lvArray;
-    ArrayAdapter<String> lvAA;
+    ArrayAdapter<AndroidVersion> lvAA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +24,19 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.demoLvID);
 
         // Can use a static array to bind to the array adapter
-        lvArray = new String[] {"Pie - 9.0", "Oreo - 8.0 - 8.1",
-                                "Nougat - 7.0 - 7.1.2", "Marshmellow - 6.0 - 6.01",
-                                "Lollipop - 5.0 - 5.1.1", "KitKat - 4.4 - 4.4.4",
-                                "Jelly Bean - 4.1 - 4.3.1"};
+        //lvArray = new String[] {"Pie - 9.0", "Oreo - 8.0 - 8.1",
+        //                        "Nougat - 7.0 - 7.1.2", "Marshmellow - 6.0 - 6.01",
+        //                        "Lollipop - 5.0 - 5.1.1", "KitKat - 4.4 - 4.4.4",
+        //                        "Jelly Bean - 4.1 - 4.3.1"};
 
 
 
         // Can also use an array list to bind to the array adapter
-        lvAL = new ArrayList<String>();
-        lvAL.addAll(Arrays.asList(lvArray)); // just converts the above array into an arraylist
+        lvAL = new ArrayList<AndroidVersion>();
+        lvAL.add(new AndroidVersion("Pie", "9.0"));
+        lvAL.add(new AndroidVersion("Oreo", "8.0 - 8.1"));
+        lvAL.add(new AndroidVersion("Nougat", "7.0 - 7.1.2"));
+        //lvAL.addAll(Arrays.asList(lvArray)); // just converts the above array into an arraylist
 
         // can be this
         //lvAA = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lvArray);
